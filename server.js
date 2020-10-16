@@ -36,6 +36,16 @@ app.post("/api/notes", function(request, response) {
     response.end(); 
 }); 
 
+app.delete("/api/notes/:id", function(request, response) {
+    //Retrieve the notes and store as an array. 
+    let notes = JSON.parse(fs.readFileSync(path.join(__dirname + "/db/db.json")));
+    //Filter out the note with this ID. 
+    let newNotes = notes.filter(note => note.id !== request.params.id); 
+    //Rewrite the db file to to exclude this note. 
+    fs.writeFileSync(path.join(__dirname + "/db/db.json"), JSON.stringify(newNotes)); 
+    response.end(); 
+}); 
+
 app.listen(PORT, function() {
     console.log("App Running"); 
 }); 
