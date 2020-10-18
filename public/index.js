@@ -58,7 +58,8 @@ const handleNoteSave = function() {
   const newNote = {
     title: $noteTitle.val(),
     text: $noteText.val(),
-    id: Math.floor(Math.random() * 1000000)
+    id: Math.floor(Math.random() * 1000000),
+    date: moment().format("l")
   };
 
   saveNote(newNote).then(() => {
@@ -114,7 +115,7 @@ const renderNoteList = (notes) => {
 
   //Returns jquery object for li with given text and delete button
   //unless withDeleteButton argument is provided as false. 
-  const create$li = (text, withDeleteButton = true) => {
+  const create$li = (text, date, withDeleteButton = true) => {
     const $li = $("<li class='list-group-item'>");
     const $span = $("<span>").text(text);
     $li.append($span);
@@ -125,6 +126,12 @@ const renderNoteList = (notes) => {
       );
       $li.append($delBtn);
     }
+
+    const dateDiv = $("<div>").text(date); 
+    dateDiv.attr("class","text-muted"); 
+    dateDiv.css("font-size","0.7rem"); 
+    $li.append(dateDiv); 
+
     return $li;
   };
 
@@ -133,7 +140,7 @@ const renderNoteList = (notes) => {
   }
 
   notes.forEach((note) => {
-    const $li = create$li(note.title).data(note);
+    const $li = create$li(note.title, note.date).data(note);
     noteListItems.push($li);
 
     console.log(note.text); 
@@ -150,7 +157,7 @@ const getAndRenderNotes = () => {
 const toggleReadOnly = () => {
   $noteTitle.attr("readonly", false);
   $noteText.attr("readonly", false);
-}
+}; 
 
 $saveNoteBtn.on("click", handleNoteSave);
 $noteList.on("click", ".list-group-item", handleNoteView);
