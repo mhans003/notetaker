@@ -4,6 +4,7 @@ const $noteText = $(".note-textarea");
 const $saveNoteBtn = $(".save-note");
 const $newNoteBtn = $(".new-note");
 const $noteList = $(".list-container .list-group");
+const $currentNote = $("#current-note"); 
 
 //Keep track of the current note being displayed. 
 let activeNote = {};
@@ -146,12 +147,18 @@ const getAndRenderNotes = () => {
   return getNotes().then(renderNoteList);
 };
 
+const toggleReadOnly = () => {
+  $noteTitle.attr("readonly", false);
+  $noteText.attr("readonly", false);
+}
+
 $saveNoteBtn.on("click", handleNoteSave);
 $noteList.on("click", ".list-group-item", handleNoteView);
 $newNoteBtn.on("click", handleNewNoteView);
 $noteList.on("click", ".delete-note", handleNoteDelete);
 $noteTitle.on("keyup", handleRenderSaveBtn);
 $noteText.on("keyup", handleRenderSaveBtn);
+$currentNote.on("click", toggleReadOnly); 
 
 // Gets and renders the initial list of notes
 getAndRenderNotes();

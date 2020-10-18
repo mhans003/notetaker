@@ -29,7 +29,7 @@ app.get("/api/notes", function(request, response) {
 app.post("/api/notes", function(request, response) {
     //Retrieve the notes and store as an array. 
     let notes = JSON.parse(fs.readFileSync(path.join(__dirname + "/db/db.json"))); 
-    //Add the note to be saved to the db file. 
+    //Add the note to be saved to the db file.  
     notes.push(request.body); 
     //Rewrite the db file to include the new note. 
     fs.writeFileSync(path.join(__dirname + "/db/db.json"), JSON.stringify(notes)); 
