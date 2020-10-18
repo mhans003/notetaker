@@ -117,20 +117,47 @@ const renderNoteList = (notes) => {
   //unless withDeleteButton argument is provided as false. 
   const create$li = (text, date, withDeleteButton = true) => {
     const $li = $("<li class='list-group-item'>");
+
+    const container = $("<div>"); 
+    container.attr("class","container"); 
+    const row = $("<div>"); 
+    row.attr("class","row"); 
+
+    const textContent = $("<div>"); 
+    textContent.attr("class","col-8"); 
+    textContent.css("padding-left","0px"); 
+
+    const iconContainer = $("<div>"); 
+    iconContainer.attr("class","col-4"); 
+    iconContainer.css("top","10px"); 
+
     const $span = $("<span>").text(text);
-    $li.append($span);
+    //$li.append($span);
+
+    const dateDiv = $("<div>").text(date); 
+    dateDiv.attr("class","text-muted"); 
+    dateDiv.css("font-size","0.7rem"); 
+
 
     if (withDeleteButton) {
       const $delBtn = $(
         "<i class='fas fa-trash-alt float-right text-danger delete-note'>"
       );
-      $li.append($delBtn);
+      //$li.append($delBtn);
+      iconContainer.append($delBtn); 
     }
 
-    const dateDiv = $("<div>").text(date); 
-    dateDiv.attr("class","text-muted"); 
-    dateDiv.css("font-size","0.7rem"); 
-    $li.append(dateDiv); 
+    
+    //$li.append(dateDiv); 
+    textContent.append($span); 
+    textContent.append(dateDiv); 
+
+    row.append(textContent); 
+    row.append(iconContainer); 
+
+    container.append(row); 
+
+    $li.append(container); 
 
     return $li;
   };
