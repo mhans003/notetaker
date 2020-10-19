@@ -2,7 +2,8 @@
 const $noteTitle = $(".note-title");
 const $noteText = $(".note-textarea");
 const $saveNoteBtn = $(".save-note");
-const $newNoteBtn = $(".new-note");
+//const $newNoteBtn = $(".new-note");
+const $newNoteBtn = $("#confirm-new-note"); 
 const $noteList = $(".list-container .list-group");
 const $currentNote = $("#current-note"); 
 //const $deleteNote = $(".delete-note"); 
