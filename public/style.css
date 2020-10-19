@@ -2,10 +2,12 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  font-family: 'Commissioner', sans-serif;
 }
 
 .navbar-brand {
-  font-size: 1.5rem; 
+  font-size: 1.8rem; 
+  letter-spacing: 2px;
 }
 
 .save-note {
@@ -19,16 +21,18 @@ html, body {
   cursor: pointer;
 }
 
+.jumbotron {
+  margin-top: 80px;
+}
+
 .note-textarea, .note-title {
   color: #000000;
   width: 100%;
   outline: none;
   border: none;
-}
-
-.note-title, .note-textarea {
   background-color: rgba(247, 215, 148,0.3); 
   padding-left: 15px; 
+  font-family: 'Source Code Pro', monospace;
 }
 
 .note-textarea {

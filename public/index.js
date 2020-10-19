@@ -144,7 +144,6 @@ const renderNoteList = (notes) => {
     dateDiv.attr("class","text-muted"); 
     dateDiv.css("font-size","0.7rem"); 
 
-
     if (withDeleteButton) {
       const $delBtn = $(
         "<i class='fas fa-trash-alt float-right text-danger delete-note'>"
@@ -155,9 +154,9 @@ const renderNoteList = (notes) => {
 
     
     //$li.append(dateDiv); 
-    textContent.append($span); 
-    textContent.append(dateDiv); 
-
+    textContent.append($span);
+    textContent.append(dateDiv);
+     
     row.append(textContent); 
     row.append(iconContainer); 
 
@@ -169,11 +168,11 @@ const renderNoteList = (notes) => {
   };
 
   if (notes.length === 0) {
-    noteListItems.push(create$li("No saved Notes", false));
+    noteListItems.push(create$li("No saved Notes", "", false));
   }
 
   notes.forEach((note) => {
-    const $li = create$li(note.title, note.date).data(note);
+    const $li = create$li(note.title, note.date, true).data(note);
     noteListItems.push($li);
 
     console.log(note.text); 
