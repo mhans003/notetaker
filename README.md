@@ -1,7 +1,10 @@
 # Note Taker
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-![Screenshot of Note Taker]()
+![Screenshot of Note Taker](./public/assets/note1.jpg)
+![Screenshot of Note Taker](./public/assets/note2.jpg)
+![Screenshot of Note Taker](./public/assets/note3.jpg)
+![Screenshot of Note Taker](./public/assets/note4.jpg)
 
 ## Description 
 
