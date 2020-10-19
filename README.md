@@ -1,6 +1,10 @@
 # Note Taker
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+## Deployed Application
+
+[Note Taker](https://protected-lowlands-90813.herokuapp.com/)
+
 ![Screenshot of Note Taker](./public/assets/note1.jpg)
 ![Screenshot of Note Taker](./public/assets/note2.jpg)
 ![Screenshot of Note Taker](./public/assets/note3.jpg)
