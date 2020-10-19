@@ -4,6 +4,10 @@ html, body {
   padding: 0;
 }
 
+.navbar-brand {
+  font-size: 1.5rem; 
+}
+
 .save-note {
   display: none;
 }
@@ -22,17 +26,20 @@ html, body {
   border: none;
 }
 
+.note-title, .note-textarea {
+  background-color: rgba(247, 215, 148,0.3); 
+  padding-left: 15px; 
+}
+
 .note-textarea {
   resize: none;
   /*height: calc(100% - 63px);*/
   height: 100%; 
-  padding-top: 15px;
 }
 
 .note-title {
-  height: 50px;
-  margin-top: 13px;
-  font-size: 3rem;
+  height: 75px;
+  font-size: 3rem; 
 }
 
 .note-title:read-only, .note-textarea:read-only {
@@ -70,6 +77,11 @@ html, body {
   cursor: pointer;
 }
 
+.col-sm-8, .col-sm-4 {
+  padding-left: 0px; 
+  padding-right: 0px; 
+}
+
 @media screen and (max-width: 575px) {
   .list-container .card {
     height: initial; 
@@ -77,5 +89,15 @@ html, body {
     margin-left: auto; 
     margin-right: auto; 
     margin-top: 10px; 
+  }
+
+  .note-title {
+    margin-top: 15px; 
+  }
+}
+
+@media screen and (max-width: 352px) {
+  h1 {
+    font-size: 1.8rem; 
   }
 }
