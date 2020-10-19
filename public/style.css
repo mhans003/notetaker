@@ -39,11 +39,13 @@ html, body {
   resize: none;
   /*height: calc(100% - 63px);*/
   height: 100%; 
+  font-size: 1.2rem; 
 }
 
 .note-title {
   height: 75px;
-  font-size: 3rem; 
+  font-size: 2rem; 
+  font-weight: bold;
 }
 
 .note-title:read-only, .note-textarea:read-only {
@@ -97,6 +99,10 @@ html, body {
 
   .note-title {
     margin-top: 15px; 
+  }
+
+  .note-textarea {
+    height: 300px; 
   }
 }
 
