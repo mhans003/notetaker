@@ -22,7 +22,7 @@
         <a class="navbar-brand" href="/">Note Taker
         </a>
         <div class="icons">
-            <i class="fas fa-save text-light save-note"></i>
+            <i class="fas fa-save text-light save-note" role="button" data-toggle="modal" data-target="#saved-modal"></i>
             <i class="fas fa-pen text-light new-note" role="button" data-toggle="modal" data-target="#new-note-modal"></i>
         </div>
     </nav>
@@ -58,6 +58,16 @@
                 <button type="button" class="btn btn-danger" data-dismiss="modal">CANCEL</button>
                 <button id="confirm-new-note" type="button" class="btn btn-primary bg-dark border-0" data-dismiss="modal">Confirm</button>
             </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Save Modal -->
+    <div class="modal fade" id="saved-modal" tabindex="-1" role="dialog" aria-labelledby="saved-modal-label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+        <div class="modal-content">
+            
+            <button type="button" class="btn btn-primary btn-lg bg-dark border-0 p-4 m-3" data-dismiss="modal">Note Saved <i class="fas fa-check"></i></button>   
         </div>
         </div>
     </div>
