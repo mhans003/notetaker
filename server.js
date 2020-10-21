@@ -16,8 +16,6 @@ app.get("/notes", function (request, response) {
     response.sendFile(path.join(__dirname + "/notes.html")); 
 });
 
-
-
 app.get("/api/notes", function(request, response) {
     //Access the notes. 
     response.sendFile(path.join(__dirname + "/db/db.json")); 
