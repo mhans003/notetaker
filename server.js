@@ -16,10 +16,7 @@ app.get("/notes", function (request, response) {
     response.sendFile(path.join(__dirname + "/notes.html")); 
 });
 
-app.get("/", function(request, response) {
-    //Render the index.html page. 
-    response.sendFile(path.join(__dirname + "/index.html")); 
-});
+
 
 app.get("/api/notes", function(request, response) {
     //Access the notes. 
@@ -45,6 +42,11 @@ app.delete("/api/notes/:id", function(request, response) {
     fs.writeFileSync(path.join(__dirname + "/db/db.json"), JSON.stringify(newNotes)); 
     response.end(); 
 }); 
+
+app.get("*", function(request, response) {
+    //Render the index.html page. 
+    response.sendFile(path.join(__dirname + "/index.html")); 
+});
 
 app.listen(PORT, function() {
     console.log("App Running"); 
