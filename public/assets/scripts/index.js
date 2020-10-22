@@ -2,11 +2,9 @@
 const $noteTitle = $(".note-title");
 const $noteText = $(".note-textarea");
 const $saveNoteBtn = $(".save-note");
-//const $newNoteBtn = $(".new-note");
 const $newNoteBtn = $("#confirm-new-note"); 
 const $noteList = $(".list-container .list-group");
 const $currentNote = $("#current-note"); 
-//const $deleteNote = $(".delete-note"); 
 
 //Keep track of the current note being displayed. 
 let activeNote = {};
@@ -72,13 +70,8 @@ const handleNoteSave = function() {
 
 //Delete the clicked note. 
 const handleNoteDelete = function(event) {
-  console.log(event.target); 
   //Prevents the click listener for the list from being called when the button inside of it is clicked. 
   event.stopPropagation();
-
-  console.log($(this).parent().parent().parent().parent().data()); 
-
-  //const note = $(this).parent(".list-group-item").data();
 
   const note = $(this).parent().parent().parent().parent().data(); 
 
@@ -139,7 +132,6 @@ const renderNoteList = (notes) => {
     iconContainer.css("top","10px"); 
 
     const $span = $("<span>").text(text);
-    //$li.append($span);
 
     const dateDiv = $("<div>").text(date); 
     dateDiv.attr("class","text-muted"); 
@@ -149,12 +141,9 @@ const renderNoteList = (notes) => {
       const $delBtn = $(
         "<i class='fas fa-trash-alt float-right text-danger delete-note'>"
       );
-      //$li.append($delBtn);
       iconContainer.append($delBtn); 
     }
 
-    
-    //$li.append(dateDiv); 
     textContent.append($span);
     textContent.append(dateDiv);
      
@@ -175,8 +164,6 @@ const renderNoteList = (notes) => {
   notes.forEach((note) => {
     const $li = create$li(note.title, note.date, true).data(note);
     noteListItems.push($li);
-
-    console.log(note.text); 
   });
 
   $noteList.append(noteListItems);
@@ -196,7 +183,6 @@ $saveNoteBtn.on("click", handleNoteSave);
 $noteList.on("click", ".list-group-item", handleNoteView);
 $newNoteBtn.on("click", handleNewNoteView);
 $noteList.on("click", ".delete-note", handleNoteDelete);
-//$deleteNote.on("click", handleNoteDelete); 
 $noteTitle.on("keyup", handleRenderSaveBtn);
 $noteText.on("keyup", handleRenderSaveBtn);
 $currentNote.on("click", toggleReadOnly); 
