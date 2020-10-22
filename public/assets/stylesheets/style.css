@@ -96,6 +96,10 @@ html, body {
   font-size: 2.2rem; 
 }
 
+#home-pencil {
+  color: rgba(24,188,156,1.0) !important; 
+}
+
 @media screen and (max-width: 575px) {
   .list-container .card {
     height: initial; 
@@ -103,10 +107,6 @@ html, body {
     margin-left: auto; 
     margin-right: auto; 
     margin-top: 10px; 
-  }
-
-  .note-title {
-    margin-top: 15px; 
   }
 
   .note-textarea {
