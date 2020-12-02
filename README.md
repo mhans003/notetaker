@@ -3,7 +3,7 @@
 
 ## Deployed Application
 
-[Note Taker](https://protected-lowlands-90813.herokuapp.com/)
+[Note Taker](https://notetaker-mh.herokuapp.com/)
 
 ![Screenshot of Note Taker](./public/assets/images/note1.jpg)
 ![Screenshot of Note Taker](./public/assets/images/note2.jpg)
