@@ -132,10 +132,11 @@ const renderNoteList = (notes) => {
     iconContainer.css("top","10px"); 
 
     const $span = $("<span>").text(text);
+    $span.css("font-size","1.2rem");
 
     const dateDiv = $("<div>").text(date); 
     dateDiv.attr("class","text-muted"); 
-    dateDiv.css("font-size","0.7rem"); 
+    dateDiv.css("font-size","0.9rem"); 
 
     if (withDeleteButton) {
       const $delBtn = $(
